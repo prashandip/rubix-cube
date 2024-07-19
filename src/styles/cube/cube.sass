@@ -1,12 +1,38 @@
 @import "./../values.sass"
 
+$t: 2.5rem
+
 section.container
   transform-style: preserve-3d
-  perspective: 1000px
-  perspective-origin: 80% 0%
+  perspective: 600px
   position: fixed
   height: 100%
   width: 100%
+  div.rotate-buttons
+    position: absolute
+    top: 4rem
+    left: 50%
+    transform: translateX(-50%)
+    button.arrow
+      border-radius: 50%
+      border: none
+      background-color: darkslategray
+      padding: 0.5rem
+      position: absolute
+      cursor: pointer
+      &.up
+        transform: translateY(-$t)
+      &.down
+        transform: translateY($t) rotate(180deg)
+      &.left
+        transform: translateX(-$t) rotate(-90deg)
+      &.right
+        transform: translateX($t) rotate(90deg)
+      svg
+        height: 2rem
+        width: 2rem
+        path
+          fill: ivory
   section.wrapper
     transform-style: preserve-3d
     position: absolute

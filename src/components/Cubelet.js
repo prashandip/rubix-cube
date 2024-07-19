@@ -4,28 +4,36 @@ import "./../styles/cube/color-piece.sass";
 
 const Cubelet = () => {
   return (
-    <div
-      className="cubelet"
-      id="c0"
-      style={{ transform: `rotateX(-10deg) rotateY(-10deg)` }}
-    >
+    <div className="cubelet" id="c0">
       <div className="face front">
-        <div className="color-piece">F</div>
+        <div className="color-piece">
+          <span style={{ color: "white" }}>F</span>
+        </div>
       </div>
       <div className="face back">
-        <div className="color-piece">B</div>
+        <div className="color-piece">
+          <span style={{ color: "white" }}>B</span>
+        </div>
       </div>
       <div className="face left">
-        <div className="color-piece">L</div>
+        <div className="color-piece">
+          <span style={{ color: "darkslategray" }}>L</span>
+        </div>
       </div>
       <div className="face right">
-        <div className="color-piece">R</div>
+        <div className="color-piece">
+          <span style={{ color: "darkslategray" }}>R</span>
+        </div>
       </div>
       <div className="face top">
-        <div className="color-piece">T</div>
+        <div className="color-piece">
+          <span style={{ color: "darkslategray" }}>T</span>
+        </div>
       </div>
       <div className="face bottom">
-        <div className="color-piece">B</div>
+        <div className="color-piece">
+          <span style={{ color: "darkslategray" }}>V</span>
+        </div>
       </div>
     </div>
   );

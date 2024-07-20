@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const cubeSlice = createSlice({
   name: "cube",
   initialState: {
-    cubeRotateX: -20,
+    cubeRotateX: -30,
     cubeRotateY: -20,
   },
   reducers: {

@@ -8,35 +8,10 @@ section.container
   position: fixed
   height: 100%
   width: 100%
-  div.rotate-buttons
-    position: absolute
-    top: 4rem
-    left: 50%
-    transform: translateX(-50%)
-    button.arrow
-      border-radius: 50%
-      border: none
-      background-color: darkslategray
-      padding: 0.5rem
-      position: absolute
-      cursor: pointer
-      &.up
-        transform: translateY(-$t)
-      &.down
-        transform: translateY($t) rotate(180deg)
-      &.left
-        transform: translateX(-$t) rotate(-90deg)
-      &.right
-        transform: translateX($t) rotate(90deg)
-      svg
-        height: 2rem
-        width: 2rem
-        path
-          fill: ivory
   section.wrapper
     transform-style: preserve-3d
     position: absolute
-    top: 50%
+    top: 45%
     left: 50%
     transform: translate(-50%, -50%)
     height: $x

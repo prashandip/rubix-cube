@@ -1,0 +1,36 @@
+$t: 2.5rem
+section.rotation-toolbar
+    position: absolute
+    top: 5rem
+    left: 50%
+    transform: translateX(-50%)
+    height: 1rem
+    width: 1rem
+    background-color: #1c1c1c
+    border-radius: 50%
+    button.arrow
+        border: none
+        background-color: darkslategray
+        height: 3rem
+        width: 3rem
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        border-radius: 50%
+        cursor: pointer
+        svg
+            height: 1.5rem
+            width: 1.5rem
+            path
+                fill: ivory
+        &.up
+            transform: translate(-50%,calc( -50% - $t))
+
+        &.down
+            transform: translate(-50%,calc( -50% + $t)) rotate(180deg)
+        &.left
+            transform: translate(calc( -50% - $t),-50%) rotate(-90deg)
+
+        &.right
+            transform: translate(calc( -50% + $t),-50%) rotate(90deg)

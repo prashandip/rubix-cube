@@ -1,11 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const front = "_FRONT",
-  back = "_BACK",
-  left = "_LEFT",
-  right = "_RIGHT",
-  top = "_TOP",
-  bottom = "_BOTTOM";
+const front = "_BLUE",
+  back = "_GREEN",
+  left = "_ORANGE",
+  right = "_RED",
+  top = "_YELLOW",
+  bottom = "_WHITE";
+export const FACE_VALUE = {
+  front: front,
+  back: back,
+  left: left,
+  right: right,
+  top: top,
+  bottom: bottom,
+};
 const initialPositions = [];
 const initialRotations = [];
 const initialOrientations = [];

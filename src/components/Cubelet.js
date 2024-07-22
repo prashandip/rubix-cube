@@ -7,17 +7,17 @@ const Cubelet = () => {
     <div className="cubelet" id="c0">
       <div className="face front">
         <div className="color-piece">
-          <span style={{ color: "white" }}>F</span>
+          <span style={{ color: "white" }}>B</span>
         </div>
       </div>
       <div className="face back">
         <div className="color-piece">
-          <span style={{ color: "white" }}>B</span>
+          <span style={{ color: "white" }}>G</span>
         </div>
       </div>
       <div className="face left">
         <div className="color-piece">
-          <span style={{ color: "darkslategray" }}>L</span>
+          <span style={{ color: "darkslategray" }}>O</span>
         </div>
       </div>
       <div className="face right">
@@ -27,12 +27,12 @@ const Cubelet = () => {
       </div>
       <div className="face top">
         <div className="color-piece">
-          <span style={{ color: "darkslategray" }}>T</span>
+          <span style={{ color: "darkslategray" }}>Y</span>
         </div>
       </div>
       <div className="face bottom">
         <div className="color-piece">
-          <span style={{ color: "darkslategray" }}>V</span>
+          <span style={{ color: "darkslategray" }}>W</span>
         </div>
       </div>
     </div>

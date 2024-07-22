@@ -1,18 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const front = "_BLUE",
-  back = "_GREEN",
-  left = "_ORANGE",
-  right = "_RED",
-  top = "_YELLOW",
-  bottom = "_WHITE";
+const blue = "_BLUE",
+  green = "_GREEN",
+  orange = "_ORANGE",
+  red = "_RED",
+  yellow = "_YELLOW",
+  white = "_WHITE";
 export const FACE_VALUE = {
-  front: front,
-  back: back,
-  left: left,
-  right: right,
-  top: top,
-  bottom: bottom,
+  blue: blue,
+  green: green,
+  orange: orange,
+  red: red,
+  yellow: yellow,
+  white: white,
 };
 const initialPositions = [];
 const initialRotations = [];
@@ -29,12 +29,12 @@ for (let i = 0; i < 27; i++) {
   initialOrientations.push({
     id: i,
     orientation: {
-      front: front,
-      back: back,
-      left: left,
-      right: right,
-      top: top,
-      bottom: bottom,
+      front: blue,
+      back: green,
+      left: orange,
+      right: red,
+      top: yellow,
+      bottom: white,
     },
   });
 }

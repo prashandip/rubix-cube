@@ -5,8 +5,7 @@ import { useSelector } from "react-redux";
 const Cube = () => {
   const cubeRotateX = useSelector((state) => state.cube.cubeRotateX);
   const cubeRotateY = useSelector((state) => state.cube.cubeRotateY);
-  const ids = [];
-  for (let i = 0; i < 27; i++) ids.push("c" + i);
+  const rotations = useSelector((state) => state.cubelet.rotations);
   return (
     <section
       className="cube"
@@ -14,8 +13,14 @@ const Cube = () => {
         transform: `rotateX(${cubeRotateX}deg) rotateY(${cubeRotateY}deg)`,
       }}
     >
-      {ids.map((id, i) => (
-        <Cubelet key={i} id={id} />
+      {rotations.map((rotation) => (
+        <Cubelet
+          key={rotation.id}
+          id={"c" + rotation.id}
+          styles={{
+            transform: `rotateX(${rotation.rotation.x}deg) rotateY(${rotation.rotation.y}deg) rotateZ(${rotation.rotation.z}deg)`,
+          }}
+        />
       ))}
     </section>
   );

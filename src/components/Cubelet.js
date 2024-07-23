@@ -4,7 +4,7 @@ import "./../styles/cube/color-piece.sass";
 
 const Cubelet = (props) => {
   return (
-    <div className="cubelet" id={props.id}>
+    <div className="cubelet" id={props.id} style={props.styles}>
       <div className="face blue">
         <div className="color-piece">
           {/* <span style={{ color: "white" }}>B</span> */}

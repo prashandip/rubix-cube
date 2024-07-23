@@ -7,13 +7,13 @@ div.cubelet
   position: absolute
   height: 100%
   width: 100%
-  //   background-color: rgb(100 100 100/20%)
   div.face
     transform-style: preserve-3d
     height: $x
     width: $x
     position: absolute
-    border: 1px solid darkslategray
+    // border: 1px solid darkslategray
+    box-shadow: 0 0 1px 1px darkslategray
     box-sizing: border-box
     display: grid
     gap: $gap
@@ -21,7 +21,8 @@ div.cubelet
     grid-template-rows: repeat(3, 1fr)
     grid-template-areas: "a0 a1 a2" "a3 a4 a5" "a6 a7 a8"
     div.color-piece
-      border: solid 1px darkblue
+      // border: solid 1px darkblue
+      box-shadow: 0 0 1px 1px #1c1c1c
       border-radius: $borderRadius
       position: relative
       span
@@ -30,33 +31,27 @@ div.cubelet
         left: 50%
         transform: translate(-50%,-50%)
         font-size: 2.5rem
-    &.front
+    &.blue
       transform: translateZ($t)
-      //   background-color: rgb(0 0 255/20%)
       div.color-piece
         background-color: blue
-    &.back
+    &.green
       transform: rotateY($r * 2) translateZ($t)
-      //   background-color: rgb(0 255 0/20%)
       div.color-piece
         background-color: green
-    &.left
+    &.orange
       transform: rotateY(-$r) translateZ($t)
-      //   background-color: rgb(255 165 0 /20%)
       div.color-piece
         background-color: orange
-    &.right
+    &.red
       transform: rotateY($r) translateZ($t)
-      //   background-color: rgb(255 0 0/20%)
       div.color-piece
         background-color: red
-    &.top
+    &.yellow
       transform: rotateX($r) translateZ($t)
-      //   background-color: rgb(255 255 0 /20%)
       div.color-piece
         background-color: yellow
-    &.bottom
+    &.white
       transform: rotateX(-$r) translateZ($t)
-      //   background-color: rgb(255 255 255/20%)
       div.color-piece
         background-color: white

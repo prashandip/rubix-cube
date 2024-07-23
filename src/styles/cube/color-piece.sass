@@ -2,19 +2,25 @@
 $t: calc(-1 * $x/1.5 - $gap/1.5)
 
 div.cubelet
-  &#c0 div.face
-    &.front div.color-piece
-      grid-area: a0
-    &.back div.color-piece
-      grid-area: a2
-      transform: translateZ($t)
-    &.left div.color-piece
-      grid-area: a2
-    &.right div.color-piece
-      grid-area: a0
-      transform: translateZ($t)
-    &.top div.color-piece
-      grid-area: a6
-    &.bottom div.color-piece
-      grid-area: a0
-      transform: translateZ($t)
+  @for $i from 0 through 2
+    @for $j from 0 through 8
+      $n: $i * 9 + $j
+      &#c#{$n} div.face
+        &.blue div.color-piece
+          grid-area: a#{$j}
+          transform: translateZ(if($i == 0,0,if($i == 1,$t/2,$t)))
+        &.green div.color-piece
+          grid-area: a#{if($j<3,2 - $j, if($j>5,14 - $j,8 - $j))}
+          transform: translateZ(if($i == 0,$t,if($i == 1,$t/2,0)))
+        &.orange div.color-piece
+          grid-area: a#{if($j<3,2, if($j>5,8,5)) - $i}
+          transform: translateZ(if($j % 3 == 0,0,if($j == 2 or $j == 5 or $j == 8,$t,$t/2)))
+        &.red div.color-piece
+          grid-area: a#{if($j<3,0, if($j>5,6,3)) + $i}
+          transform: translateZ(if($j % 3 == 0,$t,if($j == 2 or $j == 5 or $j == 8,0,$t/2)))
+        &.yellow div.color-piece
+          grid-area: a#{if($j<3,$j + 6, if($j>5,$j,$j + 3)) - if($i == 0,0,if($i == 1,3,6))}
+          transform: translateZ(if($j<3,0,if($j>5,$t,$t/2)))
+        &.white div.color-piece
+          grid-area: a#{if($j<3,$j, if($j>5,$j - 6,$j - 3)) + if($i == 0,0,if($i == 1,3,6))}
+          transform: translateZ(if($j<3,$t,if($j>5,0,$t/2)))

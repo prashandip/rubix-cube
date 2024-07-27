@@ -7,32 +7,32 @@ const Cubelet = (props) => {
     <div className="cubelet" id={props.id} style={props.styles}>
       <div className="face blue">
         <div className="color-piece">
-          {/* <span style={{ color: "white" }}>B</span> */}
+          <span style={{ color: "white" }}>{props.id}B</span>
         </div>
       </div>
       <div className="face green">
         <div className="color-piece">
-          {/* <span style={{ color: "white" }}>G</span> */}
+          <span style={{ color: "white" }}>{props.id}G</span>
         </div>
       </div>
       <div className="face orange">
         <div className="color-piece">
-          {/* <span style={{ color: "darkslategray" }}>O</span> */}
+          <span style={{ color: "darkslategray" }}>{props.id}O</span>
         </div>
       </div>
       <div className="face red">
         <div className="color-piece">
-          {/* <span style={{ color: "darkslategray" }}>R</span> */}
+          <span style={{ color: "darkslategray" }}>{props.id}R</span>
         </div>
       </div>
       <div className="face yellow">
         <div className="color-piece">
-          {/* <span style={{ color: "darkslategray" }}>Y</span> */}
+          <span style={{ color: "darkslategray" }}>{props.id}Y</span>
         </div>
       </div>
       <div className="face white">
         <div className="color-piece">
-          {/* <span style={{ color: "darkslategray" }}>W</span> */}
+          <span style={{ color: "darkslategray" }}>{props.id}W</span>
         </div>
       </div>
     </div>

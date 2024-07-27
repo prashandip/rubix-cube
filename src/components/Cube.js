@@ -6,6 +6,7 @@ const Cube = () => {
   const cubeRotateX = useSelector((state) => state.cube.cubeRotateX);
   const cubeRotateY = useSelector((state) => state.cube.cubeRotateY);
   const rotations = useSelector((state) => state.cubelet.rotations);
+
   return (
     <section
       className="cube"

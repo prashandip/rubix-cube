@@ -13,7 +13,6 @@ div.cubelet
     height: $x
     width: $x
     position: absolute
-    // border: 1px solid darkslategray
     box-shadow: 0 0 1px 1px darkslategray
     box-sizing: border-box
     display: grid
@@ -22,7 +21,6 @@ div.cubelet
     grid-template-rows: repeat(3, 1fr)
     grid-template-areas: "a0 a1 a2" "a3 a4 a5" "a6 a7 a8"
     div.color-piece
-      // border: solid 1px darkblue
       box-shadow: 0 0 1px 1px #1c1c1c
       border-radius: $borderRadius
       position: relative
@@ -31,7 +29,7 @@ div.cubelet
         top: 50%
         left: 50%
         transform: translate(-50%,-50%)
-        font-size: 2.5rem
+        font-size: 1.5rem
     &.blue
       transform: translateZ($t)
       div.color-piece

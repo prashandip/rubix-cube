@@ -1,88 +1,107 @@
 import React from "react";
 import "./../styles/toolbars/algorithm-toolbar.sass";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  getNewRotationsF,
-  getNewRotationsL,
-  getNewRotationsR,
-} from "../methods/rotation";
-import {
-  setOrientations,
-  setPositions,
-  setRotations,
-} from "../store/cubeletSlice";
-import {
-  getNewPositionsF,
-  getNewPositionsL,
-  getNewPositionsR,
-} from "../methods/position";
-import {
-  getNewOrientationsF,
-  getNewOrientationsR,
-} from "../methods/orientation";
-import { rotateF, rotateR, rotateU } from "../methods/test";
+import { getNewRotations } from "../methods/rotation";
+import { setPositions, setRotations } from "../store/cubeletSlice";
+import { getNewPositions } from "../methods/position";
 
 const AlgorithmToolbar = () => {
   const dispatch = useDispatch();
   const positions = useSelector((state) => state.cubelet.positions);
   const rotations = useSelector((state) => state.cubelet.rotations);
-  const orientations = useSelector((state) => state.cubelet.orientations);
-  const performF = (isClockwise) => {
-    // dispatch(
-    //   setRotations(
-    //     getNewRotationsF(positions, rotations, orientations, isClockwise)
-    //   )
-    // );
-    // dispatch(
-    //   setOrientations(getNewOrientationsF(positions, orientations, isClockwise))
-    // );
-    // dispatch(setPositions(getNewPositionsF(positions, isClockwise)));
-    rotateF(rotations, isClockwise);
-  };
-  const performR = (isClockwise) => {
-    dispatch(setRotations(getNewRotationsR(positions, rotations, isClockwise)));
-    dispatch(setPositions(getNewPositionsR(positions, isClockwise)));
-  };
-  const performL = (isClockwise) => {
-    dispatch(setRotations(getNewRotationsL(positions, rotations, isClockwise)));
-    dispatch(setPositions(getNewPositionsL(positions, isClockwise)));
-  };
-  const performU = (isClockwise) => {
-    rotateU(rotations, isClockwise);
+  // const performF = (isClockwise) => {
+  //   dispatch(setRotations(getNewRotationsF(positions, rotations, isClockwise)));
+  //   dispatch(setPositions(getNewPositionsF(positions, isClockwise)));
+  // };
+  // const performR = (isClockwise) => {
+  //   dispatch(setRotations(getNewRotationsR(positions, rotations, isClockwise)));
+  //   dispatch(setPositions(getNewPositionsR(positions, isClockwise)));
+  // };
+  // const performL = (isClockwise) => {
+  //   dispatch(setRotations(getNewRotationsL(positions, rotations, isClockwise)));
+  //   dispatch(setPositions(getNewPositionsL(positions, isClockwise)));
+  // };
+  // const performU = (isClockwise) => {
+  //   dispatch(setRotations(getNewRotationsU(positions, rotations, isClockwise)));
+  //   dispatch(setPositions(getNewPositionsU(positions, isClockwise)));
+  // };
+  // const performD = (isClockwise) => {
+  //   dispatch(setRotations(getNewRotationsD(positions, rotations, isClockwise)));
+  //   dispatch(setPositions(getNewPositionsD(positions, isClockwise)));
+  // };
+  const performAlgorithm = (algorithmName, isClockwise) => {
+    dispatch(
+      setRotations(
+        getNewRotations(algorithmName, positions, rotations, isClockwise)
+      )
+    );
+    dispatch(
+      setPositions(getNewPositions(algorithmName, positions, isClockwise))
+    );
   };
   return (
     <section className="algorithm-toolbar">
       <div className="algorithms clockwise">
-        <button className="algo-btn" onClick={() => performF(true)}>
+        <button
+          className="algo-btn"
+          onClick={() => performAlgorithm("F", true)}
+        >
           <span>F</span>
         </button>
-        <button className="algo-btn" onClick={() => performR(true)}>
+        <button
+          className="algo-btn"
+          onClick={() => performAlgorithm("R", true)}
+        >
           <span>R</span>
         </button>
-        <button className="algo-btn" onClick={() => performL(true)}>
+        <button
+          className="algo-btn"
+          onClick={() => performAlgorithm("L", true)}
+        >
           <span>L</span>
         </button>
-        <button className="algo-btn" onClick={() => performU(true)}>
+        <button
+          className="algo-btn"
+          onClick={() => performAlgorithm("U", true)}
+        >
           <span>U</span>
         </button>
-        <button className="algo-btn">
+        <button
+          className="algo-btn"
+          onClick={() => performAlgorithm("D", true)}
+        >
           <span>D</span>
         </button>
       </div>
       <div className="algorithms anti-clockwise">
-        <button className="algo-btn" onClick={() => performF(false)}>
+        <button
+          className="algo-btn"
+          onClick={() => performAlgorithm("F", false)}
+        >
           <span>F'</span>
         </button>
-        <button className="algo-btn" onClick={() => performR(false)}>
+        <button
+          className="algo-btn"
+          onClick={() => performAlgorithm("R", false)}
+        >
           <span>R'</span>
         </button>
-        <button className="algo-btn" onClick={() => performL(false)}>
+        <button
+          className="algo-btn"
+          onClick={() => performAlgorithm("L", false)}
+        >
           <span>L'</span>
         </button>
-        <button className="algo-btn" onClick={() => performU(false)}>
+        <button
+          className="algo-btn"
+          onClick={() => performAlgorithm("U", false)}
+        >
           <span>U'</span>
         </button>
-        <button className="algo-btn">
+        <button
+          className="algo-btn"
+          onClick={() => performAlgorithm("D", false)}
+        >
           <span>D'</span>
         </button>
       </div>
